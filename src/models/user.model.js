@@ -56,6 +56,7 @@ userSchema.pre("save", async function (next) {
 // function is used in case of arrow function because arrow dosent know about "this" keyword
 // next is a callback function and is important to call it in order to continue the execution of the function
 
+ 
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password); //comparing the password with the hashed password in the database
 };
